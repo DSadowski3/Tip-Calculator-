@@ -70,6 +70,7 @@
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-Hm-BJq">
                                 <connections>
+                                    <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="valueChanged" id="AUM-g9-14d"/>
                                     <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="SvZ-kt-tzv"/>
                                 </connections>
                             </slider>
