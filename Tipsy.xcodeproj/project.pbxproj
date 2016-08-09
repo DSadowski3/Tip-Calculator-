@@ -14,6 +14,7 @@
 		87283D431D568661007C834F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 87283D411D568661007C834F /* LaunchScreen.storyboard */; };
 		87283D4E1D568661007C834F /* TipsyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87283D4D1D568661007C834F /* TipsyTests.swift */; };
 		87283D591D568661007C834F /* TipsyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87283D581D568661007C834F /* TipsyUITests.swift */; };
+		87283D6A1D57BC47007C834F /* TipCalc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87283D691D57BC47007C834F /* TipCalc.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +48,7 @@
 		87283D541D568661007C834F /* TipsyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TipsyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		87283D581D568661007C834F /* TipsyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsyUITests.swift; sourceTree = "<group>"; };
 		87283D5A1D568661007C834F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		87283D691D57BC47007C834F /* TipCalc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipCalc.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,11 +99,11 @@
 		87283D371D568661007C834F /* Tipsy */ = {
 			isa = PBXGroup;
 			children = (
+				87283D661D57BBED007C834F /* Model */,
+				87283D671D57BBF5007C834F /* View */,
+				87283D681D57BBFA007C834F /* Controller */,
 				87283D381D568661007C834F /* AppDelegate.swift */,
-				87283D3A1D568661007C834F /* TipsyCalcVC.swift */,
-				87283D3C1D568661007C834F /* Main.storyboard */,
 				87283D3F1D568661007C834F /* Assets.xcassets */,
-				87283D411D568661007C834F /* LaunchScreen.storyboard */,
 				87283D441D568661007C834F /* Info.plist */,
 			);
 			path = Tipsy;
@@ -123,6 +125,31 @@
 				87283D5A1D568661007C834F /* Info.plist */,
 			);
 			path = TipsyUITests;
+			sourceTree = "<group>";
+		};
+		87283D661D57BBED007C834F /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				87283D691D57BC47007C834F /* TipCalc.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		87283D671D57BBF5007C834F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87283D3C1D568661007C834F /* Main.storyboard */,
+				87283D411D568661007C834F /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		87283D681D57BBFA007C834F /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				87283D3A1D568661007C834F /* TipsyCalcVC.swift */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -266,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				87283D3B1D568661007C834F /* TipsyCalcVC.swift in Sources */,
+				87283D6A1D57BC47007C834F /* TipCalc.swift in Sources */,
 				87283D391D568661007C834F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

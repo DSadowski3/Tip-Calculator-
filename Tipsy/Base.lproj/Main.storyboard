@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11143.2"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,11 +18,164 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UTz-BT-Ub0">
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Calculator" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xvA-Pn-YvI">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="146" id="Rom-Qa-96u"/>
+                                            <constraint firstAttribute="height" constant="31" id="wQg-HC-bbx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="22"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="xvA-Pn-YvI" firstAttribute="centerX" secondItem="UTz-BT-Ub0" secondAttribute="centerX" id="F0V-xD-mdp"/>
+                                    <constraint firstItem="xvA-Pn-YvI" firstAttribute="top" secondItem="UTz-BT-Ub0" secondAttribute="top" constant="20" id="WXu-RD-bDl"/>
+                                    <constraint firstAttribute="height" constant="71" id="WaB-eT-F8k"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Bill Amunt " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Wyd-bG-6Gr">
+                                <color key="backgroundColor" red="0.87843137250000003" green="0.87843137250000003" blue="0.87843137250000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Twm-fH-DkU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="billAmountChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="Ab1-Ie-b2n"/>
+                                </connections>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip 25%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Y63-dc-YQK">
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip 25%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W4j-hC-a6q">
+                                <frame key="frameInset" minX="40" minY="370" width="62" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Regular" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pFZ-i2-aaV">
+                                <frame key="frameInset" minX="122" minY="457" width="29" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                <color key="textColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.14999999999999999" minValue="0.10000000000000001" maxValue="0.25" translatesAutoresizingMaskIntoConstraints="NO" id="MJ8-Hm-BJq">
+                                <connections>
+                                    <action selector="tipPercentChanges:" destination="BYZ-38-t0r" eventType="editingChanged" id="SvZ-kt-tzv"/>
+                                </connections>
+                            </slider>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-gL-OdZ">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tipIcon" translatesAutoresizingMaskIntoConstraints="NO" id="NvE-ar-iho">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="jjg-nS-Nd8"/>
+                                            <constraint firstAttribute="width" constant="27" id="kr7-xj-OFq"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cbk-9b-LoT">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="EKb-Eu-arL"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                        <color key="textColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3CI-Y5-uS3">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="v6C-eL-Uco"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94509803921568625" green="0.041400208448883542" blue="0.044476298417433412" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="B55-CV-sJG">
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="totalIcon" translatesAutoresizingMaskIntoConstraints="NO" id="CnO-zG-IIE">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="23" id="EtU-fb-SD3"/>
+                                            <constraint firstAttribute="width" constant="23" id="L5d-KW-bpe"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kiy-D1-jN7">
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="qfN-YH-bJu"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ChalkboardSE-Bold" family="Chalkboard SE" pointSize="17"/>
+                                        <color key="textColor" red="0.39659617050000001" green="1" blue="0.28825813709999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H8u-5j-9Tn">
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="120" id="MEk-OH-Yw2"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.94509803920000002" green="0.041400208450000003" blue="0.044476298419999998" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="eachIcon" translatesAutoresizingMaskIntoConstraints="NO" id="qU6-IV-yCV">
+                                <frame key="frameInset" minX="75" minY="452" width="30" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bzl-aE-Wml">
+                                <frame key="frameInset" minX="221" minY="458" width="378" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.94509803920000002" green="0.041400208450000003" blue="0.044476298419999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="0.92156862745098034" green="0.94117647058823528" blue="0.94509803921568625" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Wyd-bG-6Gr" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="20" id="Him-1J-CxO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Wyd-bG-6Gr" secondAttribute="trailing" constant="20" id="LtI-Hf-c8W"/>
+                            <constraint firstAttribute="trailing" secondItem="UTz-BT-Ub0" secondAttribute="trailing" id="MtN-LI-3A5"/>
+                            <constraint firstItem="dRn-gL-OdZ" firstAttribute="top" secondItem="MJ8-Hm-BJq" secondAttribute="bottom" constant="22" id="PeN-m3-8TM"/>
+                            <constraint firstItem="MJ8-Hm-BJq" firstAttribute="top" secondItem="Wyd-bG-6Gr" secondAttribute="bottom" constant="16" id="Sgf-Oc-BET"/>
+                            <constraint firstItem="Wyd-bG-6Gr" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TOz-f2-UyA"/>
+                            <constraint firstItem="B55-CV-sJG" firstAttribute="top" secondItem="dRn-gL-OdZ" secondAttribute="bottom" constant="17" id="XxC-DC-xQM"/>
+                            <constraint firstItem="MJ8-Hm-BJq" firstAttribute="top" secondItem="Wyd-bG-6Gr" secondAttribute="bottom" constant="16" id="Y8b-QF-Bg8"/>
+                            <constraint firstItem="Y63-dc-YQK" firstAttribute="top" secondItem="Wyd-bG-6Gr" secondAttribute="bottom" constant="19" id="fks-h8-fQf"/>
+                            <constraint firstItem="UTz-BT-Ub0" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="h1p-eP-JiX"/>
+                            <constraint firstItem="Wyd-bG-6Gr" firstAttribute="top" secondItem="UTz-BT-Ub0" secondAttribute="bottom" constant="33" id="i1g-1Q-TBv"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="MJ8-Hm-BJq" secondAttribute="trailing" constant="20" id="lkG-9d-8c8"/>
+                            <constraint firstItem="dRn-gL-OdZ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="nW4-aj-Csr"/>
+                            <constraint firstItem="B55-CV-sJG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="38" id="o8H-OO-uaK"/>
+                            <constraint firstItem="Y63-dc-YQK" firstAttribute="leading" secondItem="Wyd-bG-6Gr" secondAttribute="leading" id="s6F-eP-Frj"/>
+                            <constraint firstItem="MJ8-Hm-BJq" firstAttribute="leading" secondItem="Y63-dc-YQK" secondAttribute="trailing" constant="20" id="wUx-up-k7M"/>
+                            <constraint firstItem="UTz-BT-Ub0" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="y6V-vR-8Dk"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="billAmountTF" destination="Wyd-bG-6Gr" id="XFj-p3-BFw"/>
+                        <outlet property="tipAmountLbl" destination="3CI-Y5-uS3" id="DtG-qZ-V6F"/>
+                        <outlet property="tipPercentLbl" destination="Y63-dc-YQK" id="VsZ-Ia-5TD"/>
+                        <outlet property="tipPercentSlider" destination="MJ8-Hm-BJq" id="tLE-iJ-HWx"/>
+                        <outlet property="tipsyTItleLbl" destination="xvA-Pn-YvI" id="4ET-7h-Amg"/>
+                        <outlet property="tipsyTitleView" destination="UTz-BT-Ub0" id="kTO-kX-HIW"/>
+                        <outlet property="totalAmountLbl" destination="H8u-5j-9Tn" id="rb6-bJ-xWp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="31.199999999999999" y="36.431784107946029"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="eachIcon" width="20" height="23"/>
+        <image name="tipIcon" width="23" height="23"/>
+        <image name="totalIcon" width="24" height="26"/>
+    </resources>
 </document>
